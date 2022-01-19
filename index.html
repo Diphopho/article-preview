@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <header>
+          <img class="drawers" src="images/drawers.jpg" alt="drawer" />
+        </header>
+        <article>
+          <h1>
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I’ve got some simple tips to help
+            you make any room feel complete.
+          </p>
+          <footer class="footer-section">
+            <div class="profile">
+              <img
+                class="avatar"
+                src="images/avatar-michelle.jpg"
+                alt="avatar"
+              />
+              <div class="details">
+                <p>Michelle Appleton</p>
+                <p>28 Jun 2020</p>
+              </div>
+              <div class="circle">
+                <img
+                  class="share-icon"
+                  src="images/icon-share.svg"
+                  alt="share"
+                />
+              </div>
+            </div>
+            <div class="share" id="share">
+              <h3>SHARE</h3>
+              <div class="socmed">
+                <img src="images/icon-facebook.svg" alt="facebook" />
+                <img src="images/icon-twitter.svg" alt="twitter" />
+                <img src="images/icon-pinterest.svg" alt="pinterest" />
+              </div>
+            </div>
+          </footer>
+        </article>
+      </section>
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Ertantiyo</a>.
+      </footer>
+    </main>
+
+    <script type="text/javascript" charset="utf-8">
+      const circle = document.querySelector(".circle");
+      const share = document.querySelector(".share");
+      const share_icon = document.querySelector(".share-icon");
+
+      circle.addEventListener("click", function () {
+        share.classList.toggle("is-active");
+        circle.classList.toggle("active");
+        share_icon.classList.toggle("act");
+      });
+    </script>
+  </body>
+</html>

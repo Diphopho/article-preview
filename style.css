@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+}
+
+main {
+  background-color: #ecf2f8;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.card {
+  margin: auto;
+  background-color: white;
+  -webkit-box-shadow: 8px 8px 40px -10px #9eafc2;
+          box-shadow: 8px 8px 40px -10px #9eafc2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.card header {
+  width: 285px;
+  height: 281px;
+}
+
+.card header .drawers {
+  width: 285px;
+  height: 100%;
+}
+
+.card article {
+  width: 60%;
+  margin: 3rem 3rem 0 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card article h1 {
+  color: #48556a;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card article p {
+  color: #6d7f97;
+}
+
+.card article .footer-section .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card article .footer-section .profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.card article .footer-section .profile .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 1em;
+}
+
+.card article .footer-section .profile .details p {
+  margin: 0;
+  padding: 0;
+}
+
+.card article .footer-section .profile .details p:nth-child(1) {
+  font-weight: 700;
+}
+
+.card article .footer-section .profile .circle {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.card article .footer-section .profile .circle .share-icon {
+  margin: auto;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.card article .footer-section .profile .circle .share-icon.act {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.card article .footer-section .profile .circle.active {
+  background-color: #9eafc2;
+}
+
+.card article .footer-section .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  width: 250px;
+  height: 55px;
+  border-radius: 10px;
+  color: #ecf2f8;
+  background-color: #48556a;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 325px;
+  left: 840px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.card article .footer-section .share.is-active {
+  opacity: 1;
+}
+
+.card article .footer-section .share::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #48556a transparent transparent transparent;
+}
+
+.card article .footer-section .share h3 {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.card article .footer-section .share .socmed {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card article .footer-section .share .socmed img {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card article .footer-section .share .socmed img:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: 85%;
+    height: 514px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card header {
+    width: 100%;
+  }
+  .card header .drawers {
+    width: 100%;
+    height: 200px;
+  }
+  .card article {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .card article h1 {
+    margin-top: 2.3em;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .card article p {
+    color: #6d7f97;
+  }
+  .card article .footer-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .card article .footer-section .profile {
+    width: 100%;
+    height: 62px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .card article .footer-section .profile .circle {
+    position: relative;
+    z-index: 99;
+  }
+  .card article .footer-section .share {
+    position: absolute;
+    left: calc(100% + 32px);
+    top: 0;
+    width: 320px;
+    height: 62px;
+    border-radius: 0 0 10px 10px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .card article .footer-section .share h3 {
+    margin-left: 2.5rem;
+  }
+  .card article .footer-section .share .socmed {
+    margin: auto;
+    margin-left: 2.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 30%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card article .footer-section .share.is-active {
+    left: -2.5em;
+  }
+}
+/*# sourceMappingURL=style.css.map */
