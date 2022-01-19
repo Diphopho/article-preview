@@ -64,7 +64,7 @@ main {
           flex-direction: column;
 }
 
-.card article h1 {
+.card article h2 {
   color: #48556a;
   font-size: 20px;
   font-weight: 700;
@@ -233,7 +233,7 @@ main {
     margin-bottom: 0;
     text-align: left;
   }
-  .card article h1 {
+  .card article h2 {
     margin-top: 2.3em;
     font-size: 16px;
     font-weight: 700;
