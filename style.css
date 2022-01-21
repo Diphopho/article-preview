@@ -5,9 +5,14 @@ html {
   font-weight: 500;
 }
 
-body {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
   max-width: 100vw;
@@ -28,6 +33,7 @@ main {
 }
 
 .card {
+  position: relative;
   margin: auto;
   background-color: white;
   -webkit-box-shadow: 8px 8px 40px -10px #9eafc2;
@@ -38,21 +44,22 @@ main {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  max-height: 280px;
   width: 50%;
   border-radius: 10px;
 }
 
 .card header {
   width: 285px;
-  height: 281px;
+  height: 280px;
 }
 
 .card header .drawers {
-  width: 285px;
+  width: 100%;
   height: 100%;
 }
 
-.card article {
+.card .article {
   width: 60%;
   margin: 3rem 3rem 0 3rem;
   display: -webkit-box;
@@ -64,33 +71,22 @@ main {
           flex-direction: column;
 }
 
-.card article h2 {
+.card .article h1 {
   color: #48556a;
   font-size: 20px;
   font-weight: 700;
   margin: 0;
 }
 
-.card article p {
+.card .article p {
   color: #6d7f97;
 }
 
-.card article .footer-section .profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.card article .footer-section .profile .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.card article .footer-section .profile .details {
+.card .footer-section {
+  position: absolute;
+  width: 50%;
+  top: 80%;
+  left: 285px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,114 +94,143 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+}
+
+.card .footer-section .profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .footer-section .profile-container .avatar-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card .footer-section .profile-container .avatar-container .avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.card .footer-section .profile-container .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-left: 1em;
 }
 
-.card article .footer-section .profile .details p {
+.card .footer-section .profile-container .details-container p {
   margin: 0;
-  padding: 0;
 }
 
-.card article .footer-section .profile .details p:nth-child(1) {
+.card .footer-section .profile-container .details-container p:nth-child(1) {
   font-weight: 700;
 }
 
-.card article .footer-section .profile .circle {
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 50%;
+.card .footer-section .profile-container .share-icon-container {
   background-color: #ecf2f8;
+  width: 30px;
+  height: 30px;
   margin-left: auto;
+  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
 }
 
-.card article .footer-section .profile .circle .share-icon {
+.card .footer-section .profile-container .share-icon-container .share-icon {
   margin: auto;
+  width: 1.2rem;
+  height: 1.2rem;
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
 
-.card article .footer-section .profile .circle .share-icon.act {
+.card .footer-section .profile-container .share-icon-container.is-active {
+  background-color: #9eafc2;
+}
+
+.card .footer-section .profile-container .share-icon-container.is-active .share-icon {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
-.card article .footer-section .profile .circle.active {
-  background-color: #9eafc2;
-}
-
-.card article .footer-section .share {
+.card .footer-section .share-container {
+  left: 55%;
+  top: -180%;
+  position: absolute;
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  opacity: 0;
-  position: absolute;
-  width: 250px;
-  height: 55px;
-  border-radius: 10px;
-  color: #ecf2f8;
-  background-color: #48556a;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 325px;
-  left: 840px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  width: 80%;
+  min-height: 55px;
+  background-color: #48556a;
+  color: #9eafc2;
+  border-radius: 10px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
-.card article .footer-section .share.is-active {
-  opacity: 1;
-}
-
-.card article .footer-section .share::after {
-  content: " ";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  border-width: 8px;
-  border-style: solid;
-  border-color: #48556a transparent transparent transparent;
-}
-
-.card article .footer-section .share h3 {
-  text-align: center;
+.card .footer-section .share-container h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5em;
   margin-left: 2rem;
 }
 
-.card article .footer-section .share .socmed {
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.card .footer-section .share-container img {
+  min-height: 20px;
+  min-width: 20px;
 }
 
-.card article .footer-section .share .socmed img {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
+.card .footer-section .share-container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  border: solid 1rem transparent;
+  border-top-color: #48556a;
 }
 
-.card article .footer-section .share .socmed img:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+.card .footer-section .share-container.is-active {
+  opacity: 1;
 }
 
 @media screen and (max-width: 375px) {
+  main {
+    max-width: 100vw;
+  }
   .card {
+    position: static;
     width: 85%;
     height: 514px;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -220,39 +245,51 @@ main {
     overflow: hidden;
   }
   .card header {
+    height: 200px;
     width: 100%;
   }
   .card header .drawers {
     width: 100%;
     height: 200px;
   }
-  .card article {
+  .card .article {
     width: 80%;
+    height: 80%;
     display: block;
     margin: auto;
     margin-bottom: 0;
     text-align: left;
   }
-  .card article h2 {
-    margin-top: 2.3em;
+  .card .article h1 {
+    margin-top: 2em;
     font-size: 16px;
     font-weight: 700;
   }
-  .card article p {
+  .card .article p {
     color: #6d7f97;
   }
-  .card article .footer-section {
+  .card .footer-section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     margin-top: 2rem;
+    top: 0;
+    left: 0;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+    height: 10rem;
     width: 100%;
   }
-  .card article .footer-section .profile {
-    width: 100%;
-    height: 62px;
-    position: relative;
+  .card .footer-section .profile-container {
+    margin: auto;
+    width: 80%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -263,36 +300,37 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
-  .card article .footer-section .profile .circle {
+  .card .footer-section .profile-container .share-icon-container {
     position: relative;
     z-index: 99;
   }
-  .card article .footer-section .share {
+  .card .footer-section .share-container {
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     position: absolute;
-    left: calc(100% + 32px);
     top: 0;
-    width: 320px;
-    height: 62px;
+    left: 100%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 0 0 10px 10px;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  .card article .footer-section .share h3 {
-    margin-left: 2.5rem;
+  .card .footer-section .share-container img:nth-child(4) {
+    margin-right: 8rem;
   }
-  .card article .footer-section .share .socmed {
-    margin: auto;
-    margin-left: 2.5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 30%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  .card .footer-section .share-container.is-active {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
-  .card article .footer-section .share.is-active {
-    left: -2.5em;
+  .card .footer-section .share-container::after {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

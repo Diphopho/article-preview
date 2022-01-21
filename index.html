@@ -29,50 +29,60 @@
   </head>
   <body>
     <main>
-      <section class="card">
+      <article class="card">
         <header>
           <img class="drawers" src="images/drawers.jpg" alt="drawer" />
         </header>
-        <article>
-          <h2>
+        <div class="article">
+          <h1>
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
-          </h2>
+          </h1>
           <p>
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I’ve got some simple tips to help
             you make any room feel complete.
           </p>
-          <footer class="footer-section">
-            <div class="profile">
+        </div>
+        <footer class="footer-section">
+          <div class="profile-container">
+            <div class="avatar-container">
               <img
                 class="avatar"
                 src="images/avatar-michelle.jpg"
                 alt="avatar"
               />
+            </div>
+            <div class="details-container">
               <div class="details">
                 <p>Michelle Appleton</p>
                 <p>28 Jun 2020</p>
               </div>
-              <div class="circle">
-                <img
-                  class="share-icon"
-                  src="images/icon-share.svg"
-                  alt="share"
-                />
-              </div>
             </div>
-            <div class="share" id="share">
-              <h3>SHARE</h3>
-              <div class="socmed">
-                <img src="images/icon-facebook.svg" alt="facebook" />
-                <img src="images/icon-twitter.svg" alt="twitter" />
-                <img src="images/icon-pinterest.svg" alt="pinterest" />
-              </div>
+            <div class="share-icon-container">
+              <img class="share-icon" src="images/icon-share.svg" alt="share" />
             </div>
-          </footer>
-        </article>
-      </section>
+          </div>
+          <div class="share-container" id="share">
+            <h2>SHARE</h2>
+            <img
+              class="socmed-icon"
+              src="images/icon-facebook.svg"
+              alt="facebook"
+            />
+            <img
+              class="socmed-icon"
+              src="images/icon-twitter.svg"
+              alt="twitter"
+            />
+            <img
+              class="socmed-icon"
+              src="images/icon-pinterest.svg"
+              alt="pinterest"
+            />
+          </div>
+        </footer>
+      </article>
       <footer class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -82,14 +92,18 @@
     </main>
 
     <script>
-      const circle = document.querySelector(".circle");
-      const share = document.querySelector(".share");
+      // const circle = document.querySelector(".circle");
+      const share = document.querySelector(".share-container");
+      const share_icon_container = document.querySelector(
+        ".share-icon-container"
+      );
       const share_icon = document.querySelector(".share-icon");
 
-      circle.addEventListener("click", function () {
+      share_icon_container.addEventListener("click", function () {
+        share_icon_container.classList.toggle("is-active");
         share.classList.toggle("is-active");
-        circle.classList.toggle("active");
-        share_icon.classList.toggle("act");
+        // circle.classList.toggle("active");
+        // share_icon.classList.toggle("is-active");
       });
     </script>
   </body>
